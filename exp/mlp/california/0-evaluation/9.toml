@@ -13,8 +13,8 @@ y_policy = "standard"
 
 [optimizer]
 type = "AdamW"
-lr = 0.0005261111893873331
-weight_decay = 7.041081826641309e-06
+lr = 0.0006134987609103123
+weight_decay = 0.0
 
 [model]
 num_embeddings = "__null__"
@@ -22,6 +22,6 @@ num_embeddings = "__null__"
 [model.backbone]
 type = "MLP"
 n_blocks = 2
-d_layer = 138
-dropout = 0.09478532976433543
+d_layer = 355
+dropout = 0.2546305362965613
 activation = "ReLU"

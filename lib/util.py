@@ -432,7 +432,7 @@ def get_checkpoint_path(output: Union[str, Path]) -> Path:
 
 
 def load_checkpoint(output: Union[str, Path], **kwargs) -> JSONDict:
-    return torch.load(get_checkpoint_path(output), **kwargs)
+    return torch.load(get_checkpoint_path(output),weights_only=False, **kwargs)
 
 
 def dump_checkpoint(checkpoint: JSONDict, output: Union[str, Path], **kwargs) -> None:

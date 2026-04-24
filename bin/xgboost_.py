@@ -145,7 +145,8 @@ def main(
     report['best_iteration'] = model.best_iteration
 
     # >>> finish
-    model.save_model(str(output / "model.xgbm"))
+    # model.save_model(str(output / "model.xgbm"))
+    model.get_booster().save_model(str(output / "model.xgbm"))
     np.save(output / "feature_importances.npy", model.feature_importances_)
     predictions = {k: predict(v) for k, v in dataset.X_num.items()}
     report['metrics'] = dataset.calculate_metrics(

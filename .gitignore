@@ -168,3 +168,9 @@ exp/**/*.*
 .DS_Store
 .vscode/
 local/
+tabr_env/
+venv/
+__pycache__/
+*.pyc
+data/
+*.npy
