@@ -111,6 +111,25 @@ class Model(nn.Module):
             )
 
         self.linear = nn.Linear(d_in, d_main)
+
+
+        # =========================
+        # FiTabR: Feature Attention
+        # =========================
+        if n_num_features > 0:
+            self.feature_attention = nn.Sequential(
+                nn.Linear(n_num_features, n_num_features),
+                nn.ReLU(),
+                nn.Linear(n_num_features, n_num_features),
+            )
+
+            for m in self.feature_attention:
+                if isinstance(m, nn.Linear):
+                    nn.init.xavier_uniform_(m.weight)
+                    nn.init.zeros_(m.bias)
+
+
+        
         self.blocks0 = nn.ModuleList(
             [make_block(i > 0) for i in range(encoder_n_blocks)]
         )
@@ -165,14 +184,42 @@ class Model(nn.Module):
         del x_
 
         x = []
+        # if x_num is None:
+        #     assert self.num_embeddings is None
+        # else:
+        #     x.append(
+        #         x_num
+        #         if self.num_embeddings is None
+        #         else self.num_embeddings(x_num).flatten(1)
+        #     )
+
+
+# //////////////////////////////////////////////////////////////////////////////
         if x_num is None:
             assert self.num_embeddings is None
         else:
+            # =========================
+            # Apply feature attention
+            # =========================
+            # attn = self.feature_attention(x_num)
+            attn = torch.softmax(self.feature_attention(x_num), dim=1)
+
+            attn = attn.to(x_num.device).type_as(x_num)
+           
+            # scale effect
+            attn = 2.0 * attn
+
+            # residual weighting
+            x_num_weighted = x_num * (1.0 + attn)
+
             x.append(
-                x_num
+                x_num_weighted
                 if self.num_embeddings is None
-                else self.num_embeddings(x_num).flatten(1)
+                else self.num_embeddings(x_num_weighted).flatten(1)
             )
+
+# ///////////////////////////////////////////////////////////////////////////
+
         if x_bin is not None:
             x.append(x_bin)
         if x_cat is None:
@@ -524,12 +571,35 @@ def main(
     report['time'] = str(timer)
 
     # >>> finish
+
     model.load_state_dict(lib.load_checkpoint(output)['model'])
     report['metrics'], predictions, _ = evaluate(
         ['train', 'val', 'test'], eval_batch_size
     )
     report['chunk_size'] = chunk_size
     report['eval_batch_size'] = eval_batch_size
+    
+    # =========================
+    # Save Feature Attention
+    # =========================
+    if hasattr(model, "feature_attention") and dataset.data["X_num"] is not None:
+
+        model.eval()
+        with torch.no_grad():
+            X = dataset.data["X_num"]["train"].to(device)
+
+            # attn = model.feature_attention(X)
+            attn = torch.softmax(model.feature_attention(X), dim=1)
+
+            # statistics
+            mean_attn = attn.mean(dim=0).cpu().tolist()
+            std_attn = attn.std(dim=0).cpu().tolist()
+
+            report["attention"] = {
+                "mean": mean_attn,
+                "std": std_attn
+            }
+# //////////////////////////////////////////////////////////////////////////////////
     lib.dump_predictions(predictions, output)
     lib.dump_summary(lib.summarize(report), output)
     save_checkpoint()

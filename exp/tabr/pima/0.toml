@@ -1,8 +1,8 @@
 seed = 0
 batch_size = 128
-patience = 30
+patience = 16
 n_epochs = 100
-context_size = 128
+context_size = 96
 
 [data]
 seed = 0
@@ -31,5 +31,5 @@ activation = "ReLU"
 
 [optimizer]
 type = "AdamW"
-lr = 0.0001
-weight_decay = 0.0
+lr = 0.0003121273641315169
+weight_decay = 1.2260352006404615e-06
