@@ -38,6 +38,36 @@
     "prediction_type": "logits",
     "best_epoch": 44,
     "metrics": {
+        "train": {
+            "0": {
+                "precision": 0.8620689655172413,
+                "recall": 0.9312320916905444,
+                "f1-score": 0.8953168044077136,
+                "support": 349.0
+            },
+            "1": {
+                "precision": 0.85,
+                "recall": 0.723404255319149,
+                "f1-score": 0.7816091954022989,
+                "support": 188.0
+            },
+            "accuracy": 0.8584729981378026,
+            "macro avg": {
+                "precision": 0.8560344827586206,
+                "recall": 0.8273181735048467,
+                "f1-score": 0.8384629999050062,
+                "support": 537.0
+            },
+            "weighted avg": {
+                "precision": 0.8578437038464006,
+                "recall": 0.8584729981378026,
+                "f1-score": 0.855508553955166,
+                "support": 537.0
+            },
+            "cross-entropy": 0.3350429213004595,
+            "roc-auc": 0.9296622569042249,
+            "score": 0.8584729981378026
+        },
         "val": {
             "0": {
                 "precision": 0.8292682926829268,
@@ -98,5 +128,8 @@
             "roc-auc": 0.8012105766167569,
             "score": 0.75
         }
-    }
+    },
+    "time": "0:06:44.063849",
+    "chunk_size": null,
+    "eval_batch_size": 32768
 }

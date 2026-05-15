@@ -142,13 +142,11 @@ cython_debug/
 
 # Data, checkpoints, etc.
 cache
-data
-data2
+
 **/catboost_cached_datasets/**
 *.bin
 *.csv
 *.cbm
-*.npy
 *.npz
 *.pickle
 *.pt
@@ -172,5 +170,3 @@ tabr_env/
 venv/
 __pycache__/
 *.pyc
-data/
-*.npy

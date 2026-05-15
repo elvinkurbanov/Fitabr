@@ -1,0 +1,11 @@
+{
+    "name": "Pima Indians Diabetes",
+    "id": "pima",
+    "task_type": "binclass",
+    "n_num_features": 8,
+    "n_cat_features": 0,
+    "n_bin_features": 0,
+    "train_size": 537,
+    "val_size": 115,
+    "test_size": 116
+}
