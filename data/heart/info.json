@@ -1,0 +1,11 @@
+{
+    "name": "Heart Disease",
+    "id": "heart",
+    "task_type": "binclass",
+    "n_num_features": 6,
+    "n_cat_features": 5,
+    "n_bin_features": 0,
+    "train_size": 642,
+    "val_size": 138,
+    "test_size": 138
+}

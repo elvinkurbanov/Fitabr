@@ -1,4 +1,7 @@
-Copyright (c) 2023 Authors of "TabR: Unlocking the Power of Retrieval-Augmented Tabular Deep Learning"
+MIT License
+
+Copyright (c) 2026 Elvin Kurbanov
+Based on TabR: "TabR: Unlocking the Power of Retrieval-Augmented Tabular Deep Learning"
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

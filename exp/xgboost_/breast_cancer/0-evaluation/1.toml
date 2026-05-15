@@ -1,0 +1,28 @@
+seed = 1
+neighbors = "__null__"
+
+[data]
+seed = 0
+num_policy = "__null__"
+cache = true
+path = ":data/breast_cancer"
+cat_policy = "__null__"
+y_policy = "__null__"
+
+[model]
+booster = "gbtree"
+n_estimators = 4000
+n_jobs = 1
+tree_method = "hist"
+use_label_encoder = false
+colsample_bytree = 0.658991589696988
+gamma = 0
+lambda = 0.0
+learning_rate = 0.006254152586876391
+max_depth = 9
+min_child_weight = 0.0003661365327691201
+subsample = 0.7879732477780896
+
+[fit]
+early_stopping_rounds = 200
+verbose = true

@@ -1,0 +1,129 @@
+{
+    "function": "bin.xgboost_.main",
+    "gpus": [],
+    "config": {
+        "seed": 9,
+        "data": {
+            "seed": 0,
+            "num_policy": null,
+            "cache": true,
+            "path": ":data/breast_cancer",
+            "cat_policy": null,
+            "y_policy": null
+        },
+        "model": {
+            "booster": "gbtree",
+            "n_estimators": 4000,
+            "n_jobs": 1,
+            "tree_method": "hist",
+            "use_label_encoder": false,
+            "colsample_bytree": 0.658991589696988,
+            "gamma": 0,
+            "lambda": 0.0,
+            "learning_rate": 0.006254152586876391,
+            "max_depth": 9,
+            "min_child_weight": 0.0003661365327691201,
+            "subsample": 0.7879732477780896
+        },
+        "fit": {
+            "early_stopping_rounds": 200,
+            "verbose": true
+        },
+        "neighbors": null
+    },
+    "prediction_type": "probs",
+    "time": "0:00:00.922112",
+    "best_iteration": 4,
+    "metrics": {
+        "train": {
+            "0": {
+                "precision": 1.0,
+                "recall": 0.996,
+                "f1-score": 0.9979959919839679,
+                "support": 250.0
+            },
+            "1": {
+                "precision": 0.9932885906040269,
+                "recall": 1.0,
+                "f1-score": 0.9966329966329966,
+                "support": 148.0
+            },
+            "accuracy": 0.9974874371859297,
+            "macro avg": {
+                "precision": 0.9966442953020134,
+                "recall": 0.998,
+                "f1-score": 0.9973144943084823,
+                "support": 398.0
+            },
+            "weighted avg": {
+                "precision": 0.9975043000236079,
+                "recall": 0.9974874371859297,
+                "f1-score": 0.9974891494916469,
+                "support": 398.0
+            },
+            "cross-entropy": 0.6637237424112526,
+            "roc-auc": 1.0,
+            "score": 0.9974874371859297
+        },
+        "val": {
+            "0": {
+                "precision": 0.9636363636363636,
+                "recall": 1.0,
+                "f1-score": 0.9814814814814815,
+                "support": 53.0
+            },
+            "1": {
+                "precision": 1.0,
+                "recall": 0.9375,
+                "f1-score": 0.967741935483871,
+                "support": 32.0
+            },
+            "accuracy": 0.9764705882352941,
+            "macro avg": {
+                "precision": 0.9818181818181818,
+                "recall": 0.96875,
+                "f1-score": 0.9746117084826762,
+                "support": 85.0
+            },
+            "weighted avg": {
+                "precision": 0.977326203208556,
+                "recall": 0.9764705882352941,
+                "f1-score": 0.9763089465176752,
+                "support": 85.0
+            },
+            "cross-entropy": 0.666441602577777,
+            "roc-auc": 0.9964622641509434,
+            "score": 0.9764705882352941
+        },
+        "test": {
+            "0": {
+                "precision": 0.9473684210526315,
+                "recall": 1.0,
+                "f1-score": 0.972972972972973,
+                "support": 54.0
+            },
+            "1": {
+                "precision": 1.0,
+                "recall": 0.90625,
+                "f1-score": 0.9508196721311475,
+                "support": 32.0
+            },
+            "accuracy": 0.9651162790697675,
+            "macro avg": {
+                "precision": 0.9736842105263157,
+                "recall": 0.953125,
+                "f1-score": 0.9618963225520603,
+                "support": 86.0
+            },
+            "weighted avg": {
+                "precision": 0.966952264381885,
+                "recall": 0.9651162790697675,
+                "f1-score": 0.9647298842876425,
+                "support": 86.0
+            },
+            "cross-entropy": 0.6661294063411956,
+            "roc-auc": 0.994212962962963,
+            "score": 0.9651162790697675
+        }
+    }
+}
