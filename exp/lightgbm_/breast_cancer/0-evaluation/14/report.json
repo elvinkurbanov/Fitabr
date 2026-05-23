@@ -1,0 +1,124 @@
+{
+    "function": "bin.lightgbm_.main",
+    "gpus": [],
+    "config": {
+        "seed": 14,
+        "data": {
+            "seed": 0,
+            "num_policy": "quantile",
+            "cache": true,
+            "path": ":data/breast_cancer",
+            "cat_policy": null,
+            "y_policy": null
+        },
+        "model": {
+            "n_estimators": 4000,
+            "n_jobs": 4,
+            "feature_fraction": 0.5510783561720344,
+            "lambda_l2": 2.008953714134553,
+            "learning_rate": 0.7618932258069482,
+            "num_leaves": 718,
+            "min_sum_hessian_in_leaf": 1.681144168887964,
+            "bagging_fraction": 0.9286293397493877
+        },
+        "fit": {
+            "early_stopping_rounds": 200,
+            "verbose": true
+        }
+    },
+    "prediction_type": "probs",
+    "time": "0:00:00.047554",
+    "best_iteration": 22,
+    "metrics": {
+        "train": {
+            "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 250.0
+            },
+            "1": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 148.0
+            },
+            "accuracy": 1.0,
+            "macro avg": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 398.0
+            },
+            "weighted avg": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 398.0
+            },
+            "cross-entropy": 0.014686320614284444,
+            "roc-auc": 1.0,
+            "score": 1.0
+        },
+        "val": {
+            "0": {
+                "precision": 0.9298245614035088,
+                "recall": 1.0,
+                "f1-score": 0.9636363636363636,
+                "support": 53.0
+            },
+            "1": {
+                "precision": 1.0,
+                "recall": 0.875,
+                "f1-score": 0.9333333333333333,
+                "support": 32.0
+            },
+            "accuracy": 0.9529411764705882,
+            "macro avg": {
+                "precision": 0.9649122807017544,
+                "recall": 0.9375,
+                "f1-score": 0.9484848484848485,
+                "support": 85.0
+            },
+            "weighted avg": {
+                "precision": 0.9562435500515997,
+                "recall": 0.9529411764705882,
+                "f1-score": 0.9522281639928698,
+                "support": 85.0
+            },
+            "cross-entropy": 0.15752016437318256,
+            "roc-auc": 0.9846698113207547,
+            "score": 0.9529411764705882
+        },
+        "test": {
+            "0": {
+                "precision": 0.9310344827586207,
+                "recall": 1.0,
+                "f1-score": 0.9642857142857143,
+                "support": 54.0
+            },
+            "1": {
+                "precision": 1.0,
+                "recall": 0.875,
+                "f1-score": 0.9333333333333333,
+                "support": 32.0
+            },
+            "accuracy": 0.9534883720930233,
+            "macro avg": {
+                "precision": 0.9655172413793103,
+                "recall": 0.9375,
+                "f1-score": 0.9488095238095238,
+                "support": 86.0
+            },
+            "weighted avg": {
+                "precision": 0.9566960705693666,
+                "recall": 0.9534883720930233,
+                "f1-score": 0.9527685492801771,
+                "support": 86.0
+            },
+            "cross-entropy": 0.061222753391220575,
+            "roc-auc": 1.0,
+            "score": 0.9534883720930233
+        }
+    }
+}

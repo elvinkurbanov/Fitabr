@@ -1,0 +1,28 @@
+seed = 9
+neighbors = "__null__"
+
+[data]
+seed = 0
+num_policy = "__null__"
+cache = true
+path = ":data/heart"
+cat_policy = "one-hot"
+y_policy = "__null__"
+
+[model]
+booster = "gbtree"
+n_estimators = 4000
+n_jobs = 1
+tree_method = "hist"
+use_label_encoder = false
+colsample_bytree = 0.8913948205228248
+gamma = 0.001019229303608974
+lambda = 9.881441467161135
+learning_rate = 0.09773127972444023
+max_depth = 4
+min_child_weight = 12.485565590815112
+subsample = 0.8176927660519363
+
+[fit]
+early_stopping_rounds = 200
+verbose = true

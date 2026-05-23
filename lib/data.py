@@ -296,7 +296,7 @@ def transform_cat(X: NumpyDict, policy: CatPolicy) -> NumpyDict:
         return X
     elif policy == CatPolicy.ONE_HOT:
         encoder = sklearn.preprocessing.OneHotEncoder(
-            handle_unknown='ignore', sparse=False, dtype=np.float32  # type: ignore[code]
+            handle_unknown='ignore', sparse_output=False, dtype=np.float32  # type: ignore[code]
         )
         encoder.fit(X['train'])
         return {k: cast(np.ndarray, encoder.transform(v)) for k, v in X.items()}

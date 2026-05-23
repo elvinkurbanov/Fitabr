@@ -1,0 +1,25 @@
+seed = 1
+batch_size = 256
+patience = 16
+n_epochs = inf
+
+[data]
+seed = 0
+cache = true
+path = ":data/breast_cancer"
+num_policy = "quantile"
+cat_policy = "__null__"
+y_policy = "__null__"
+
+[optimizer]
+type = "AdamW"
+lr = 0.00038322168504927853
+weight_decay = 7.098936257405907e-05
+
+[model]
+d_token = 40
+n_blocks = 1
+attention_dropout = 0.01010919872016286
+ffn_d_hidden_factor = 2.3319063565911664
+ffn_dropout = 0.38907837547492524
+residual_dropout = 0.15983171284334474

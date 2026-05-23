@@ -1,0 +1,125 @@
+{
+    "function": "bin.catboost_.main",
+    "gpus": [],
+    "config": {
+        "seed": 2,
+        "data": {
+            "seed": 0,
+            "num_policy": "quantile",
+            "cat_policy": null,
+            "cache": true,
+            "path": ":data/stroke",
+            "y_policy": null
+        },
+        "model": {
+            "iterations": 4000,
+            "od_pval": 0.001,
+            "bagging_temperature": 0.6176354970758771,
+            "depth": 7,
+            "l2_leaf_reg": 9.637075956246598,
+            "leaf_estimation_iterations": 10,
+            "learning_rate": 0.06930456675054711,
+            "task_type": "CPU",
+            "thread_count": 4
+        },
+        "fit": {
+            "early_stopping_rounds": 200,
+            "logging_level": "Verbose"
+        }
+    },
+    "prediction_type": "probs",
+    "time": "0:00:18.912770",
+    "best_iteration": 118,
+    "metrics": {
+        "train": {
+            "0": {
+                "precision": 0.9524076147816349,
+                "recall": 0.9997061416397296,
+                "f1-score": 0.9754838709677419,
+                "support": 3403.0
+            },
+            "1": {
+                "precision": 0.8,
+                "recall": 0.022988505747126436,
+                "f1-score": 0.0446927374301676,
+                "support": 174.0
+            },
+            "accuracy": 0.9521945764607213,
+            "macro avg": {
+                "precision": 0.8762038073908175,
+                "recall": 0.5113473236934281,
+                "f1-score": 0.5100883041989548,
+                "support": 3577.0
+            },
+            "weighted avg": {
+                "precision": 0.9449938812138393,
+                "recall": 0.9521945764607213,
+                "f1-score": 0.9302063598591207,
+                "support": 3577.0
+            },
+            "cross-entropy": 0.12646307120589387,
+            "roc-auc": 0.9215448843312697,
+            "score": 0.9521945764607213
+        },
+        "val": {
+            "0": {
+                "precision": 0.9529411764705882,
+                "recall": 1.0,
+                "f1-score": 0.9759036144578314,
+                "support": 729.0
+            },
+            "1": {
+                "precision": 1.0,
+                "recall": 0.02702702702702703,
+                "f1-score": 0.05263157894736842,
+                "support": 37.0
+            },
+            "accuracy": 0.9530026109660574,
+            "macro avg": {
+                "precision": 0.9764705882352941,
+                "recall": 0.5135135135135135,
+                "f1-score": 0.5142675967025999,
+                "support": 766.0
+            },
+            "weighted avg": {
+                "precision": 0.9552142528029488,
+                "recall": 0.9530026109660574,
+                "f1-score": 0.9313069234475347,
+                "support": 766.0
+            },
+            "cross-entropy": 0.15703566868876187,
+            "roc-auc": 0.838653468283098,
+            "score": 0.9530026109660574
+        },
+        "test": {
+            "0": {
+                "precision": 0.9504563233376793,
+                "recall": 1.0,
+                "f1-score": 0.9745989304812834,
+                "support": 729.0
+            },
+            "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 38.0
+            },
+            "accuracy": 0.9504563233376793,
+            "macro avg": {
+                "precision": 0.47522816166883963,
+                "recall": 0.5,
+                "f1-score": 0.4872994652406417,
+                "support": 767.0
+            },
+            "weighted avg": {
+                "precision": 0.9033672225725792,
+                "recall": 0.9504563233376793,
+                "f1-score": 0.9263137161940751,
+                "support": 767.0
+            },
+            "cross-entropy": 0.16397432369194323,
+            "roc-auc": 0.8250306837051476,
+            "score": 0.9504563233376793
+        }
+    }
+}

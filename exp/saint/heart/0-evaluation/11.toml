@@ -1,0 +1,27 @@
+seed = 11
+batch_size = 256
+patience = 16
+n_epochs = inf
+
+[data]
+seed = 0
+cache = true
+path = ":data/heart"
+num_policy = "quantile"
+cat_policy = "__null__"
+y_policy = "__null__"
+
+[model]
+depth = 3
+heads = 8
+attentiontype = "colrow"
+dim = 12
+dim_head = 22
+ffn_mult = 2.0619290585211965
+attn_dropout = 0.030112735814634917
+ff_dropout = 0.33338335772283384
+
+[optimizer]
+type = "AdamW"
+lr = 0.00021941976179005762
+weight_decay = 0

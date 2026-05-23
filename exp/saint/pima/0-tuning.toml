@@ -16,7 +16,7 @@ seed = 0
 cache = true
 path = ":data/pima"
 num_policy = "quantile"
-cat_policy = "ordinal"
+cat_policy = "__null__"
 y_policy = "__null__"
 
 [space.model]

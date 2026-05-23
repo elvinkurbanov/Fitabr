@@ -1,0 +1,125 @@
+{
+    "function": "bin.catboost_.main",
+    "gpus": [],
+    "config": {
+        "seed": 7,
+        "data": {
+            "seed": 0,
+            "num_policy": "quantile",
+            "cat_policy": null,
+            "cache": true,
+            "path": ":data/breast_cancer",
+            "y_policy": null
+        },
+        "model": {
+            "iterations": 4000,
+            "od_pval": 0.001,
+            "bagging_temperature": 0.2653894909394454,
+            "depth": 9,
+            "l2_leaf_reg": 1.0300110565085727,
+            "leaf_estimation_iterations": 6,
+            "learning_rate": 0.6136045802294308,
+            "task_type": "CPU",
+            "thread_count": 4
+        },
+        "fit": {
+            "early_stopping_rounds": 200,
+            "logging_level": "Verbose"
+        }
+    },
+    "prediction_type": "probs",
+    "time": "0:00:05.128731",
+    "best_iteration": 1,
+    "metrics": {
+        "train": {
+            "0": {
+                "precision": 0.9803149606299213,
+                "recall": 0.996,
+                "f1-score": 0.9880952380952381,
+                "support": 250.0
+            },
+            "1": {
+                "precision": 0.9930555555555556,
+                "recall": 0.9662162162162162,
+                "f1-score": 0.9794520547945206,
+                "support": 148.0
+            },
+            "accuracy": 0.9849246231155779,
+            "macro avg": {
+                "precision": 0.9866852580927384,
+                "recall": 0.9811081081081081,
+                "f1-score": 0.9837736464448794,
+                "support": 398.0
+            },
+            "weighted avg": {
+                "precision": 0.9850526692957351,
+                "recall": 0.9849246231155779,
+                "f1-score": 0.9848811900336648,
+                "support": 398.0
+            },
+            "cross-entropy": 0.10164651885955202,
+            "roc-auc": 0.9971891891891892,
+            "score": 0.9849246231155779
+        },
+        "val": {
+            "0": {
+                "precision": 0.9298245614035088,
+                "recall": 1.0,
+                "f1-score": 0.9636363636363636,
+                "support": 53.0
+            },
+            "1": {
+                "precision": 1.0,
+                "recall": 0.875,
+                "f1-score": 0.9333333333333333,
+                "support": 32.0
+            },
+            "accuracy": 0.9529411764705882,
+            "macro avg": {
+                "precision": 0.9649122807017544,
+                "recall": 0.9375,
+                "f1-score": 0.9484848484848485,
+                "support": 85.0
+            },
+            "weighted avg": {
+                "precision": 0.9562435500515997,
+                "recall": 0.9529411764705882,
+                "f1-score": 0.9522281639928698,
+                "support": 85.0
+            },
+            "cross-entropy": 0.18098348841399953,
+            "roc-auc": 0.9796580188679245,
+            "score": 0.9529411764705882
+        },
+        "test": {
+            "0": {
+                "precision": 0.9818181818181818,
+                "recall": 1.0,
+                "f1-score": 0.9908256880733946,
+                "support": 54.0
+            },
+            "1": {
+                "precision": 1.0,
+                "recall": 0.96875,
+                "f1-score": 0.9841269841269841,
+                "support": 32.0
+            },
+            "accuracy": 0.9883720930232558,
+            "macro avg": {
+                "precision": 0.990909090909091,
+                "recall": 0.984375,
+                "f1-score": 0.9874763361001893,
+                "support": 86.0
+            },
+            "weighted avg": {
+                "precision": 0.9885835095137421,
+                "recall": 0.9883720930232558,
+                "f1-score": 0.9883331470700791,
+                "support": 86.0
+            },
+            "cross-entropy": 0.09483031608070575,
+            "roc-auc": 0.9982638888888888,
+            "score": 0.9883720930232558
+        }
+    }
+}

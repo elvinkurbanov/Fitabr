@@ -1,0 +1,27 @@
+seed = 11
+batch_size = 256
+patience = 16
+n_epochs = inf
+
+[data]
+seed = 0
+cache = true
+path = ":data/pima"
+num_policy = "quantile"
+cat_policy = "__null__"
+y_policy = "__null__"
+
+[model]
+depth = 4
+heads = 8
+attentiontype = "colrow"
+dim = 12
+dim_head = 42
+ffn_mult = 1.3326915466557292
+attn_dropout = 0.42664480858268794
+ff_dropout = 0.1952456967630536
+
+[optimizer]
+type = "AdamW"
+lr = 0.0009371375998225994
+weight_decay = 1.0417033464945235e-05

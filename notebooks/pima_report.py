@@ -36,7 +36,7 @@ for model, path in reports.items():
 
 df = pd.DataFrame(rows)
 df = df.round(4)
-display(df)
+# display(df)
 
-df.to_csv("paper_results_table.csv", index=False)
-df.to_latex("paper_results_table.tex", index=False)
+df.to_csv("pima_comparison_table.csv", index=False)
+df.to_latex("pima_comparison_table.tex", index=False)

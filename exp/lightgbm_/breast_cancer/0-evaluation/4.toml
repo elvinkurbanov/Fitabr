@@ -1,0 +1,23 @@
+seed = 4
+
+[data]
+seed = 0
+num_policy = "quantile"
+cache = true
+path = ":data/breast_cancer"
+cat_policy = "__null__"
+y_policy = "__null__"
+
+[model]
+n_estimators = 4000
+n_jobs = 4
+feature_fraction = 0.5510783561720344
+lambda_l2 = 2.008953714134553
+learning_rate = 0.7618932258069482
+num_leaves = 718
+min_sum_hessian_in_leaf = 1.681144168887964
+bagging_fraction = 0.9286293397493877
+
+[fit]
+early_stopping_rounds = 200
+verbose = true
