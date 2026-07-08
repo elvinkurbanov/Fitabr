@@ -19,6 +19,7 @@ rows = []
 for model, path in reports.items():
     path = Path(path)
     if not path.exists():
+        print(f"Missing: {path}")
         continue
 
     r = json.load(open(path))
@@ -37,6 +38,13 @@ for model, path in reports.items():
 df = pd.DataFrame(rows)
 df = df.round(4)
 # display(df)
+if df.empty:
+    raise ValueError("No report.json files were found. Check your paths.")
 
-df.to_csv("stroke_comparison_table.csv", index=False)
-df.to_latex("stroke_comparison_table.tex", index=False)
+
+df.to_csv("notebooks/stroke_comparison_table.csv", index=False)
+df.to_latex("notebooks/stroke_comparison_table.tex", index=False)
+
+
+print("Saved stroke_comparison_table.csv")
+print("Saved stroke_comparison_table.tex")

@@ -2,7 +2,7 @@
     "function": "bin.ft_transformer.main",
     "gpus": [],
     "config": {
-        "seed": 1,
+        "seed": 4,
         "batch_size": 256,
         "patience": 16,
         "n_epochs": Infinity,
@@ -58,8 +58,8 @@
                 "f1-score": 0.9276401364015402,
                 "support": 3577.0
             },
-            "cross-entropy": 0.18829748959425102,
-            "roc-auc": 0.8370749609033273,
+            "cross-entropy": 0.2152374395190102,
+            "roc-auc": 0.8222646684298168,
             "score": 0.9513558848196813
         },
         "val": {
@@ -88,8 +88,8 @@
                 "f1-score": 0.9281434197542723,
                 "support": 766.0
             },
-            "cross-entropy": 0.18699377133356745,
-            "roc-auc": 0.8207095984873762,
+            "cross-entropy": 0.21361608243167474,
+            "roc-auc": 0.8099581062544026,
             "score": 0.9516971279373369
         },
         "test": {
@@ -118,12 +118,12 @@
                 "f1-score": 0.9263137161940751,
                 "support": 767.0
             },
-            "cross-entropy": 0.19185447043505127,
-            "roc-auc": 0.8258970471446105,
+            "cross-entropy": 0.2189518189843949,
+            "roc-auc": 0.7922532669121363,
             "score": 0.9504563233376793
         }
     },
-    "time": "0:01:33.635895",
+    "time": "0:01:33.276629",
     "chunk_size": null,
     "eval_batch_size": 32768
 }

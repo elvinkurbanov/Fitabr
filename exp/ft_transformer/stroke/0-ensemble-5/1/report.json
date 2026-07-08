@@ -1,36 +1,17 @@
 {
-    "function": "bin.ft_transformer.main",
-    "gpus": [],
+    "function": "bin.ensemble.main",
     "config": {
-        "seed": 1,
-        "batch_size": 256,
-        "patience": 16,
-        "n_epochs": Infinity,
-        "data": {
-            "seed": 0,
-            "cache": true,
-            "path": ":data/stroke",
-            "num_policy": "quantile",
-            "cat_policy": null,
-            "y_policy": null
-        },
-        "optimizer": {
-            "type": "AdamW",
-            "lr": 0.0001152937975755054,
-            "weight_decay": 2.514916526080427e-05
-        },
-        "model": {
-            "d_token": 352,
-            "n_blocks": 2,
-            "attention_dropout": 0.26448875754806717,
-            "ffn_d_hidden_factor": 1.2196038723932177,
-            "ffn_dropout": 0.24161266804401318,
-            "residual_dropout": 0.1642499077056608
-        }
+        "seeds": [
+            5,
+            6,
+            7,
+            8,
+            9
+        ]
     },
-    "n_parameters": 1916949,
-    "prediction_type": "logits",
-    "best_epoch": 0,
+    "single_model_function": "bin.ft_transformer.main",
+    "data": ":data/stroke",
+    "prediction_type": "probs",
     "metrics": {
         "train": {
             "0": {
@@ -58,8 +39,8 @@
                 "f1-score": 0.9276401364015402,
                 "support": 3577.0
             },
-            "cross-entropy": 0.18829748959425102,
-            "roc-auc": 0.8370749609033273,
+            "cross-entropy": 0.15897195898487212,
+            "roc-auc": 0.8474807556550846,
             "score": 0.9513558848196813
         },
         "val": {
@@ -88,8 +69,8 @@
                 "f1-score": 0.9281434197542723,
                 "support": 766.0
             },
-            "cross-entropy": 0.18699377133356745,
-            "roc-auc": 0.8207095984873762,
+            "cross-entropy": 0.1588531254833126,
+            "roc-auc": 0.8369851332814295,
             "score": 0.9516971279373369
         },
         "test": {
@@ -118,12 +99,9 @@
                 "f1-score": 0.9263137161940751,
                 "support": 767.0
             },
-            "cross-entropy": 0.19185447043505127,
-            "roc-auc": 0.8258970471446105,
+            "cross-entropy": 0.16276512981650318,
+            "roc-auc": 0.8366182947079635,
             "score": 0.9504563233376793
         }
-    },
-    "time": "0:01:33.635895",
-    "chunk_size": null,
-    "eval_batch_size": 32768
+    }
 }

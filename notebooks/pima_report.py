@@ -38,5 +38,5 @@ df = pd.DataFrame(rows)
 df = df.round(4)
 # display(df)
 
-df.to_csv("pima_comparison_table.csv", index=False)
-df.to_latex("pima_comparison_table.tex", index=False)
+df.to_csv("notebooks/pima_comparison_table.csv", index=False)
+df.to_latex("notebooks/pima_comparison_table.tex", index=False)

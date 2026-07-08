@@ -38,5 +38,5 @@ df = pd.DataFrame(rows)
 df = df.round(4)
 # display(df)
 
-df.to_csv("cancer_comparison_table.csv", index=False)
-df.to_latex("cancer_comparison_table.tex", index=False)
+df.to_csv("notebooks/cancer_comparison_table.csv", index=False)
+df.to_latex("notebooks/cancer_comparison_table.tex", index=False)
