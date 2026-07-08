@@ -145,7 +145,7 @@ cache
 
 **/catboost_cached_datasets/**
 *.bin
-*.csv
+# *.csv
 *.cbm
 *.npz
 *.pickle
