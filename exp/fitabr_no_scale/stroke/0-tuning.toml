@@ -1,6 +1,7 @@
 seed = 0
 function = "bin.fitabr_no_scale.main"
 n_trials = 100
+
 timeout = "__null__"
 
 [sampler]
