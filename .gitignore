@@ -170,3 +170,5 @@ tabr_env/
 venv/
 __pycache__/
 *.pyc
+requirements.txt
+Miniforge3/
