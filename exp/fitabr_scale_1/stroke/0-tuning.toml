@@ -1,5 +1,5 @@
 seed = 0
-function = "bin.fitabr_no_scale.main"
+function = "bin.fitabr_scale_1.main"
 n_trials = 100
 
 timeout = "__null__"
