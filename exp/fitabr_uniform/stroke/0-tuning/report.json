@@ -198,12 +198,12 @@
                 "score": 0.9504563233376793
             }
         },
-        "time": "0:07:41.983671",
+        "time": "0:19:03.456298",
         "chunk_size": null,
         "eval_batch_size": 32768,
         "trial_id": 15,
-        "tuning_time": "1:21:27.213623"
+        "tuning_time": "2:09:03.746865"
     },
-    "time": "6:15:21.317331",
+    "time": "9:49:56.659258",
     "n_completed_trials": 100
 }

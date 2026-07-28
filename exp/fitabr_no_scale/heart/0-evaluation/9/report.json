@@ -129,7 +129,7 @@
             "score": 0.8768115942028986
         }
     },
-    "time": "0:00:34.851930",
+    "time": "0:01:04.804978",
     "chunk_size": null,
     "eval_batch_size": 32768,
     "attention": {

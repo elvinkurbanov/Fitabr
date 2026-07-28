@@ -189,25 +189,21 @@ class Model(nn.Module):
            assert self.num_embeddings is None
         else:
            n_features = x_num.shape[1]
-
+           # Assign equal attention to every numerical feature
            uniform_attn = torch.full_like(
               x_num,
               fill_value=1.0 / n_features,
            )
-
+           # Keep the same scale factor as complete FiTabR
            uniform_attn = 2.0 * uniform_attn
+           # Keep the residual weighting
+           x_num_weighted = x_num * ( 1.0 + uniform_attn )
 
-           x_num_weighted = x_num * (
-              1.0 + uniform_attn
-        )
-
-        x.append(
-           x_num_weighted
-           if self.num_embeddings is None
-           else self.num_embeddings(
+           x.append(
               x_num_weighted
-           ).flatten(1)
-        )
+              if self.num_embeddings is None
+              else self.num_embeddings( x_num_weighted ).flatten(1)
+           )
         # //////////////////////////////////////////////////////////////////////////////////////
         # if x_num is None:
         #     assert self.num_embeddings is None
