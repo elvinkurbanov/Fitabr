@@ -155,6 +155,8 @@ cache
 *.tar*
 *.tmp
 *.zip
+*.toml
+*.json
 events.out.tfevents.*
 
 # Experiments
