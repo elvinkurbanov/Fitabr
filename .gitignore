@@ -161,8 +161,8 @@ events.out.tfevents.*
 
 # Experiments
 exp/**/*.*
-!exp/**/report.json
-!exp/**/*.toml
+# !exp/**/report.json
+# !exp/**/*.toml
 
 # Other
 .DS_Store
