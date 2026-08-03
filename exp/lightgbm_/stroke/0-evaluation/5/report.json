@@ -1,0 +1,124 @@
+{
+    "function": "bin.lightgbm_.main",
+    "gpus": [],
+    "config": {
+        "seed": 5,
+        "data": {
+            "seed": 0,
+            "num_policy": "quantile",
+            "cache": true,
+            "path": ":data/stroke",
+            "cat_policy": "one-hot",
+            "y_policy": null
+        },
+        "model": {
+            "n_estimators": 4000,
+            "n_jobs": 4,
+            "feature_fraction": 0.5484733918125145,
+            "lambda_l2": 0.0,
+            "learning_rate": 0.17266434564236316,
+            "num_leaves": 233,
+            "min_sum_hessian_in_leaf": 19.70944871239897,
+            "bagging_fraction": 0.8502901156942194
+        },
+        "fit": {
+            "early_stopping_rounds": 200,
+            "verbose": true
+        }
+    },
+    "prediction_type": "probs",
+    "time": "0:00:00.849857",
+    "best_iteration": 129,
+    "metrics": {
+        "train": {
+            "0": {
+                "precision": 0.95347533632287,
+                "recall": 0.9997061416397296,
+                "f1-score": 0.9760436092382728,
+                "support": 3403.0
+            },
+            "1": {
+                "precision": 0.8888888888888888,
+                "recall": 0.04597701149425287,
+                "f1-score": 0.08743169398907104,
+                "support": 174.0
+            },
+            "accuracy": 0.9533128319821079,
+            "macro avg": {
+                "precision": 0.9211821126058795,
+                "recall": 0.5228415765669913,
+                "f1-score": 0.5317376516136719,
+                "support": 3577.0
+            },
+            "weighted avg": {
+                "precision": 0.9503335857348038,
+                "recall": 0.9533128319821079,
+                "f1-score": 0.9328178688822871,
+                "support": 3577.0
+            },
+            "cross-entropy": 0.12757707948634828,
+            "roc-auc": 0.9182693769189457,
+            "score": 0.9533128319821079
+        },
+        "val": {
+            "0": {
+                "precision": 0.9529411764705882,
+                "recall": 1.0,
+                "f1-score": 0.9759036144578314,
+                "support": 729.0
+            },
+            "1": {
+                "precision": 1.0,
+                "recall": 0.02702702702702703,
+                "f1-score": 0.05263157894736842,
+                "support": 37.0
+            },
+            "accuracy": 0.9530026109660574,
+            "macro avg": {
+                "precision": 0.9764705882352941,
+                "recall": 0.5135135135135135,
+                "f1-score": 0.5142675967025999,
+                "support": 766.0
+            },
+            "weighted avg": {
+                "precision": 0.9552142528029488,
+                "recall": 0.9530026109660574,
+                "f1-score": 0.9313069234475347,
+                "support": 766.0
+            },
+            "cross-entropy": 0.15007364792042246,
+            "roc-auc": 0.8585251918585252,
+            "score": 0.9530026109660574
+        },
+        "test": {
+            "0": {
+                "precision": 0.9516971279373369,
+                "recall": 1.0,
+                "f1-score": 0.9752508361204013,
+                "support": 729.0
+            },
+            "1": {
+                "precision": 1.0,
+                "recall": 0.02631578947368421,
+                "f1-score": 0.05128205128205128,
+                "support": 38.0
+            },
+            "accuracy": 0.9517601043024772,
+            "macro avg": {
+                "precision": 0.9758485639686685,
+                "recall": 0.5131578947368421,
+                "f1-score": 0.5132664437012263,
+                "support": 767.0
+            },
+            "weighted avg": {
+                "precision": 0.9540902298126709,
+                "recall": 0.9517601043024772,
+                "f1-score": 0.9294740253982926,
+                "support": 767.0
+            },
+            "cross-entropy": 0.16712574383257606,
+            "roc-auc": 0.8105190960941447,
+            "score": 0.9517601043024772
+        }
+    }
+}

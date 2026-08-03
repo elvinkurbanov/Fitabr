@@ -1,0 +1,59 @@
+{
+    "function": "bin.ffn.main",
+    "gpus": [],
+    "config": {
+        "seed": 0,
+        "batch_size": 256,
+        "patience": 16,
+        "n_epochs": Infinity,
+        "data": {
+            "seed": 0,
+            "cache": true,
+            "path": ":data/california",
+            "num_policy": "quantile",
+            "cat_policy": null,
+            "y_policy": "standard"
+        },
+        "model": {
+            "num_embeddings": null,
+            "backbone": {
+                "type": "MLP",
+                "n_blocks": 1,
+                "d_layer": 64,
+                "dropout": 0.0,
+                "activation": "ReLU"
+            }
+        },
+        "optimizer": {
+            "type": "AdamW",
+            "lr": 0.001,
+            "weight_decay": 0.0
+        }
+    },
+    "n_parameters": 641,
+    "prediction_type": null,
+    "best_epoch": 258,
+    "metrics": {
+        "train": {
+            "rmse": 0.5044542432266568,
+            "mae": 0.3526123916460371,
+            "r2": 0.8110766410827637,
+            "score": -0.5044542432266568
+        },
+        "val": {
+            "rmse": 0.5224430971319285,
+            "mae": 0.35727098412428404,
+            "r2": 0.7906640768051147,
+            "score": -0.5224430971319285
+        },
+        "test": {
+            "rmse": 0.5407286937276913,
+            "mae": 0.3752980529114538,
+            "r2": 0.7757686972618103,
+            "score": -0.5407286937276913
+        }
+    },
+    "time": "0:00:15.531031",
+    "chunk_size": null,
+    "eval_batch_size": 32768
+}

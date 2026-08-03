@@ -1,0 +1,24 @@
+seed = 10
+
+[data]
+seed = 0
+num_policy = "quantile"
+cat_policy = "__null__"
+cache = true
+path = ":data/heart"
+y_policy = "__null__"
+
+[model]
+iterations = 4000
+od_pval = 0.001
+bagging_temperature = 0.576530875439293
+depth = 3
+l2_leaf_reg = 3.268534414762321
+leaf_estimation_iterations = 4
+learning_rate = 0.08143265488540512
+task_type = "CPU"
+thread_count = 4
+
+[fit]
+early_stopping_rounds = 200
+logging_level = "Verbose"
