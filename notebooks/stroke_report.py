@@ -5,7 +5,6 @@ from pathlib import Path
 reports = {
     "CatBoost": "exp/catboost_/stroke/0-ensemble-5/0/report.json",
     "XGBoost": "exp/xgboost_/stroke/0-ensemble-5/0/report.json",
-    "KNN": "exp/knn/stroke/0-ensemble-5/0/report.json",
     "Lightgbm": "exp/lightgbm_/stroke/0-ensemble-5/0/report.json",
     "MLP": "exp/mlp/stroke/0-ensemble-5/0/report.json",
     "Saint": "exp/saint/stroke/0-ensemble-5/0/report.json",
