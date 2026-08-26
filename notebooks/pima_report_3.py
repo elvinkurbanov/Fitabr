@@ -7,7 +7,6 @@ import pandas as pd
 MODEL_DIRS = {
     "CatBoost": "exp/catboost_/pima/0-ensemble-5",
     "XGBoost": "exp/xgboost_/pima/0-ensemble-5",
-    "KNN": "exp/knn/pima/0-ensemble-5",
     "LightGBM": "exp/lightgbm_/pima/0-ensemble-5",
     "MLP": "exp/mlp/pima/0-ensemble-5",
     "SAINT": "exp/saint/pima/0-ensemble-5",
