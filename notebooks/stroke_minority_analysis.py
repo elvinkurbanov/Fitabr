@@ -7,6 +7,8 @@ import pandas as pd
 MODEL_DIRS = {
     "TabR": Path("exp/tabr/stroke/0-ensemble-5"),
     "FiTabR": Path("exp/fitabr/stroke/0-ensemble-5"),
+    # "TabR-ROC": Path("exp/tabr/stroke_roc/0-ensemble-5"),
+    # "FiTabR-ROC": Path("exp/fitabr/stroke_roc/0-ensemble-5"),
 }
 
 ENSEMBLE_IDS = [0, 1, 2]
