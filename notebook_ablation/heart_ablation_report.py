@@ -96,12 +96,12 @@ output_dir = Path("notebook_ablation")
 output_dir.mkdir(parents=True, exist_ok=True)
 
 publication_df.to_csv(
-    output_dir / "pima_comparison_table.csv",
+    output_dir / "heart_comparison_table.csv",
     index=False,
 )
 
 publication_df.to_latex(
-    output_dir / "pima_comparison_table.tex",
+    output_dir / "heart_comparison_table.tex",
     index=False,
     escape=False,
 )
