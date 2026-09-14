@@ -1,11 +1,13 @@
 import json
 from pathlib import Path
 
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 
 
 MODEL_DIRS = {
-      "TabR": "exp/tabr/stroke/0-ensemble-5",
+    "TabR": "exp/tabr/stroke/0-ensemble-5",
     "FitabR": "exp/fitabr/stroke/0-ensemble-5",
     "FitabR_No_Residual": "exp/fitabr_no_residual/stroke/0-ensemble-5",
     "FitabR_No_Scale": "exp/fitabr_no_scale/stroke/0-ensemble-5",
@@ -108,4 +110,92 @@ publication_df.to_latex(
 print(publication_df.to_string(index=False))
 
 
+# ============================================================
+# Plot Stroke ablation results
+# ============================================================
 
+models = list(mean_df.index)
+
+x = np.arange(len(models))
+width = 0.24
+
+fig, ax = plt.subplots(figsize=(8, 4.8))
+
+ax.bar(
+    x - width,
+    mean_df["Accuracy"],
+    width,
+    yerr=std_df["Accuracy"],
+    capsize=3,
+    label="Accuracy",
+)
+
+ax.bar(
+    x,
+    mean_df["F1-score"],
+    width,
+    yerr=std_df["F1-score"],
+    capsize=3,
+    label="F1-score",
+)
+
+ax.bar(
+    x + width,
+    mean_df["ROC-AUC"],
+    width,
+    yerr=std_df["ROC-AUC"],
+    capsize=3,
+    label="ROC-AUC",
+)
+
+ax.set_ylabel("Score")
+
+ax.set_xticks(x)
+ax.set_xticklabels(
+    [
+        "TabR",
+        "FiTabR",
+        "No Residual",
+        r"$\alpha=1$",
+        "Uniform",
+    ]
+)
+
+# Range suitable for Stroke results
+ax.set_ylim(0.75, 0.97)
+
+ax.grid(
+    axis="y",
+    linestyle="--",
+    alpha=0.3,
+)
+
+ax.set_axisbelow(True)
+
+ax.legend(
+    loc="upper center",
+    bbox_to_anchor=(0.5, 1.02),
+    ncol=3,
+    frameon=False,
+)
+
+fig.tight_layout()
+
+# Create figure directory
+figure_dir = Path("notebook_ablation/figures")
+figure_dir.mkdir(parents=True, exist_ok=True)
+
+# Vector version for thesis
+fig.savefig(
+    figure_dir / "stroke_ablation_performance.pdf",
+    bbox_inches="tight",
+)
+
+# PNG for preview / GitHub
+fig.savefig(
+    figure_dir / "stroke_ablation_performance.png",
+    dpi=300,
+    bbox_inches="tight",
+)
+
+plt.show()
