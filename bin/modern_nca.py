@@ -157,13 +157,14 @@ def _make_candidate_indices(
     n_sample = min(n_train, max(2, int(np.ceil(n_train * sample_rate))))
     selected = torch.randperm(n_train)[:n_sample].tolist()
     selected_set = set(selected)
-    queries = query_ids.detach().cpu().tolist()
-    for query_id in queries:
-        positive = torch.nonzero(y_train_cpu == y_train_cpu[query_id]).reshape(-1).tolist()
-        positive = [idx for idx in positive if idx != query_id]
-        if positive and not any(idx in selected_set for idx in positive):
-            chosen = positive[int(torch.randint(len(positive), (1,)).item())]
-            selected_set.add(chosen)
+    query_labels = torch.unique(y_train_cpu[query_ids.detach().cpu()]).tolist()
+    for label in query_labels:
+        positive = torch.nonzero(y_train_cpu == label).reshape(-1)
+        if positive.numel() > 1:
+            # Two distinct same-class candidates guarantee each query has a
+            # positive neighbor after its own row is excluded.
+            chosen = positive[torch.randperm(positive.numel())[:2]].tolist()
+            selected_set.update(chosen)
     return torch.tensor(sorted(selected_set), dtype=torch.long, device=device)
 
 
