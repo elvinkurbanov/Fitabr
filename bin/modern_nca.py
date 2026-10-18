@@ -137,6 +137,7 @@ def _predict(model, dataset, part: str, candidate_chunk_size: int = 1024) -> np.
         if key.startswith('X_')
     }
     candidate_y = dataset.Y['train'].reshape(-1).long()
+    candidate_ids = torch.arange(dataset.size('train'), device=device)
     outputs = []
     x_part = {
         key[2:]: value[part] for key, value in dataset.data.items()
@@ -145,7 +146,15 @@ def _predict(model, dataset, part: str, candidate_chunk_size: int = 1024) -> np.
     for start in range(0, dataset.size(part), candidate_chunk_size):
         stop = min(start + candidate_chunk_size, dataset.size(part))
         x = {key: value[start:stop] for key, value in x_part.items()}
-        outputs.append(model(x_=x, candidate_x_=candidates, candidate_y=candidate_y).cpu())
+        query_ids = (
+            torch.arange(start, stop, device=device) if part == 'train' else None
+        )
+        outputs.append(
+            model(
+                x_=x, candidate_x_=candidates, candidate_y=candidate_y,
+                query_ids=query_ids, candidate_ids=candidate_ids,
+            ).cpu()
+        )
     return torch.cat(outputs).numpy()
 
 
