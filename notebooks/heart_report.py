@@ -12,6 +12,7 @@ MODEL_DIRS = {
     "SAINT": "exp/saint/heart/0-ensemble-5",
     "FT-Transformer": "exp/ft_transformer/heart/0-ensemble-5",
     "TabR": "exp/tabr/heart/0-ensemble-5",
+    "ModernNCA": "exp/modern_nca/heart/0-ensemble-5",
     "FiTabR": "exp/fitabr/heart/0-ensemble-5",
 }
 

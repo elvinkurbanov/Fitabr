@@ -1,0 +1,32 @@
+seed = 3
+batch_size = 256
+patience = 16
+n_epochs = inf
+
+[data]
+seed = 0
+cache = true
+path = ":data/pima"
+num_policy = "quantile"
+cat_policy = "__null__"
+y_policy = "__null__"
+
+[model]
+dim = 597
+dropout = 0.4509060111497573
+d_block = 591
+n_blocks = 2
+temperature = 1.0
+sample_rate = 0.564921850220448
+
+[model.num_embeddings]
+type = "PLREmbeddings"
+n_frequencies = 81
+frequency_scale = 0.12359471777156954
+d_embedding = 38
+lite = true
+
+[optimizer]
+type = "AdamW"
+lr = 0.0010562883409427283
+weight_decay = 8.859667710878289e-05

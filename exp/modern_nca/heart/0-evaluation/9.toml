@@ -1,0 +1,32 @@
+seed = 9
+batch_size = 256
+patience = 16
+n_epochs = inf
+
+[data]
+seed = 0
+cache = true
+path = ":data/heart"
+num_policy = "quantile"
+cat_policy = "__null__"
+y_policy = "__null__"
+
+[model]
+dim = 387
+dropout = 0.3831606574146861
+d_block = 627
+n_blocks = 2
+temperature = 1.0
+sample_rate = 0.27298050957688896
+
+[model.num_embeddings]
+type = "PLREmbeddings"
+n_frequencies = 93
+frequency_scale = 0.6698935861881067
+d_embedding = 17
+lite = true
+
+[optimizer]
+type = "AdamW"
+lr = 3.74759593435284e-05
+weight_decay = 6.900813119557564e-06
