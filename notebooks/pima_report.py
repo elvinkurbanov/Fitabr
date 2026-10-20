@@ -12,6 +12,7 @@ MODEL_DIRS = {
     "SAINT": "exp/saint/pima/0-ensemble-5",
     "FT-Transformer": "exp/ft_transformer/pima/0-ensemble-5",
     "TabR": "exp/tabr/pima/0-ensemble-5",
+    "ModernNCA": "exp/modern_nca/pima/0-ensemble-5",
     "FiTabR": "exp/fitabr/pima/0-ensemble-5",
 }
 
